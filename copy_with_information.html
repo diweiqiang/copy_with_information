@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <style>
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        .container-fluid{
+            position: absolute;
+            width:500px;
+            height:600px;
+            left:50%;
+            top:10%;
+            margin-left: -250px;
+            background: #e0e0e0;
+        }
+        p{
+            color: green;
+            font-size: 1.3em;
+            padding:5px;
+            margin-top: 10px;
+        }
+        label{
+            font-size: 1.3em;
+            margin-left: 8px;
+        }
+        #content{
+            font-size: 1.4em;
+            color:lightsalmon;
+            margin:8px;
+            text-shadow: 0 0 20px lightsalmon;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <p style="">我很喜欢夏天，而它就要来了！</p>
+    <div>
+        <label>the information you get from copy is:</label>
+        <div id="content"></div>
+    </div>
+</div>
+
+<script src="jquery-3.1.0.js"></script>
+<script>
+    document.oncopy=addInformation;
+
+    function addInformation() {
+        var selection=window.getSelection();
+        var afterCopy=selection+' ...来自邸的祝福';
+        $('#content').html(afterCopy);
+    }
+</script>
+</body>
+</html>
